@@ -1,0 +1,664 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="Checksothe">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="empno" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ChecksotheResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ChecksotheResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="checkLogin">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ho" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ten" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="checkLoginResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="checkLoginResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="deleteNhanVien">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ho" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="deleteNhanVienResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="deleteNhanVienResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertNhanvien">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ho" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ten" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertNhanvienResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="InsertNhanvienResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateNhanVien">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="hoCu" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="tenCu" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="hoMoi" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="tenMoi" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateNhanVienResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UpdateNhanVienResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getData">
+        <s:complexType />
+      </s:element>
+      <s:element name="getDataResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getDataResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="checkbarcode">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Barcode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="checkbarcodeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="checkbarcodeResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="checkprdbab">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="barcode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="checkprdbabResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="checkprdbabResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="datetime">
+        <s:complexType />
+      </s:element>
+      <s:element name="datetimeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="datetimeResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="insert">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="barcode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sothe" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="lido" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="stacode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="insertResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="insertResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="mokhoabarcode">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="barcode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sothe" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="lido" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="mokhoabarcodeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="mokhoabarcodeResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="kieuloikhoa">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="lido" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="kieuloikhoaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="kieuloikhoaResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Get_shift">
+        <s:complexType />
+      </s:element>
+      <s:element name="Get_shiftResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Get_shiftResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="checklido">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="barcode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="checklidoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="checklidoResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="checkkhoahaychua">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="barcode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="checkkhoahaychuaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="checkkhoahaychuaResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="ChecksotheSoapIn">
+    <wsdl:part name="parameters" element="tns:Checksothe" />
+  </wsdl:message>
+  <wsdl:message name="ChecksotheSoapOut">
+    <wsdl:part name="parameters" element="tns:ChecksotheResponse" />
+  </wsdl:message>
+  <wsdl:message name="checkLoginSoapIn">
+    <wsdl:part name="parameters" element="tns:checkLogin" />
+  </wsdl:message>
+  <wsdl:message name="checkLoginSoapOut">
+    <wsdl:part name="parameters" element="tns:checkLoginResponse" />
+  </wsdl:message>
+  <wsdl:message name="deleteNhanVienSoapIn">
+    <wsdl:part name="parameters" element="tns:deleteNhanVien" />
+  </wsdl:message>
+  <wsdl:message name="deleteNhanVienSoapOut">
+    <wsdl:part name="parameters" element="tns:deleteNhanVienResponse" />
+  </wsdl:message>
+  <wsdl:message name="InsertNhanvienSoapIn">
+    <wsdl:part name="parameters" element="tns:InsertNhanvien" />
+  </wsdl:message>
+  <wsdl:message name="InsertNhanvienSoapOut">
+    <wsdl:part name="parameters" element="tns:InsertNhanvienResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateNhanVienSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateNhanVien" />
+  </wsdl:message>
+  <wsdl:message name="UpdateNhanVienSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateNhanVienResponse" />
+  </wsdl:message>
+  <wsdl:message name="getDataSoapIn">
+    <wsdl:part name="parameters" element="tns:getData" />
+  </wsdl:message>
+  <wsdl:message name="getDataSoapOut">
+    <wsdl:part name="parameters" element="tns:getDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="checkbarcodeSoapIn">
+    <wsdl:part name="parameters" element="tns:checkbarcode" />
+  </wsdl:message>
+  <wsdl:message name="checkbarcodeSoapOut">
+    <wsdl:part name="parameters" element="tns:checkbarcodeResponse" />
+  </wsdl:message>
+  <wsdl:message name="checkprdbabSoapIn">
+    <wsdl:part name="parameters" element="tns:checkprdbab" />
+  </wsdl:message>
+  <wsdl:message name="checkprdbabSoapOut">
+    <wsdl:part name="parameters" element="tns:checkprdbabResponse" />
+  </wsdl:message>
+  <wsdl:message name="datetimeSoapIn">
+    <wsdl:part name="parameters" element="tns:datetime" />
+  </wsdl:message>
+  <wsdl:message name="datetimeSoapOut">
+    <wsdl:part name="parameters" element="tns:datetimeResponse" />
+  </wsdl:message>
+  <wsdl:message name="insertSoapIn">
+    <wsdl:part name="parameters" element="tns:insert" />
+  </wsdl:message>
+  <wsdl:message name="insertSoapOut">
+    <wsdl:part name="parameters" element="tns:insertResponse" />
+  </wsdl:message>
+  <wsdl:message name="mokhoabarcodeSoapIn">
+    <wsdl:part name="parameters" element="tns:mokhoabarcode" />
+  </wsdl:message>
+  <wsdl:message name="mokhoabarcodeSoapOut">
+    <wsdl:part name="parameters" element="tns:mokhoabarcodeResponse" />
+  </wsdl:message>
+  <wsdl:message name="kieuloikhoaSoapIn">
+    <wsdl:part name="parameters" element="tns:kieuloikhoa" />
+  </wsdl:message>
+  <wsdl:message name="kieuloikhoaSoapOut">
+    <wsdl:part name="parameters" element="tns:kieuloikhoaResponse" />
+  </wsdl:message>
+  <wsdl:message name="Get_shiftSoapIn">
+    <wsdl:part name="parameters" element="tns:Get_shift" />
+  </wsdl:message>
+  <wsdl:message name="Get_shiftSoapOut">
+    <wsdl:part name="parameters" element="tns:Get_shiftResponse" />
+  </wsdl:message>
+  <wsdl:message name="checklidoSoapIn">
+    <wsdl:part name="parameters" element="tns:checklido" />
+  </wsdl:message>
+  <wsdl:message name="checklidoSoapOut">
+    <wsdl:part name="parameters" element="tns:checklidoResponse" />
+  </wsdl:message>
+  <wsdl:message name="checkkhoahaychuaSoapIn">
+    <wsdl:part name="parameters" element="tns:checkkhoahaychua" />
+  </wsdl:message>
+  <wsdl:message name="checkkhoahaychuaSoapOut">
+    <wsdl:part name="parameters" element="tns:checkkhoahaychuaResponse" />
+  </wsdl:message>
+  <wsdl:portType name="severBarcodeSoap">
+    <wsdl:operation name="Checksothe">
+      <wsdl:input message="tns:ChecksotheSoapIn" />
+      <wsdl:output message="tns:ChecksotheSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="checkLogin">
+      <wsdl:input message="tns:checkLoginSoapIn" />
+      <wsdl:output message="tns:checkLoginSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="deleteNhanVien">
+      <wsdl:input message="tns:deleteNhanVienSoapIn" />
+      <wsdl:output message="tns:deleteNhanVienSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertNhanvien">
+      <wsdl:input message="tns:InsertNhanvienSoapIn" />
+      <wsdl:output message="tns:InsertNhanvienSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateNhanVien">
+      <wsdl:input message="tns:UpdateNhanVienSoapIn" />
+      <wsdl:output message="tns:UpdateNhanVienSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getData">
+      <wsdl:input message="tns:getDataSoapIn" />
+      <wsdl:output message="tns:getDataSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="checkbarcode">
+      <wsdl:input message="tns:checkbarcodeSoapIn" />
+      <wsdl:output message="tns:checkbarcodeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="checkprdbab">
+      <wsdl:input message="tns:checkprdbabSoapIn" />
+      <wsdl:output message="tns:checkprdbabSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="datetime">
+      <wsdl:input message="tns:datetimeSoapIn" />
+      <wsdl:output message="tns:datetimeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="insert">
+      <wsdl:input message="tns:insertSoapIn" />
+      <wsdl:output message="tns:insertSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="mokhoabarcode">
+      <wsdl:input message="tns:mokhoabarcodeSoapIn" />
+      <wsdl:output message="tns:mokhoabarcodeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="kieuloikhoa">
+      <wsdl:input message="tns:kieuloikhoaSoapIn" />
+      <wsdl:output message="tns:kieuloikhoaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Get_shift">
+      <wsdl:input message="tns:Get_shiftSoapIn" />
+      <wsdl:output message="tns:Get_shiftSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="checklido">
+      <wsdl:input message="tns:checklidoSoapIn" />
+      <wsdl:output message="tns:checklidoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="checkkhoahaychua">
+      <wsdl:input message="tns:checkkhoahaychuaSoapIn" />
+      <wsdl:output message="tns:checkkhoahaychuaSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="severBarcodeSoap" type="tns:severBarcodeSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Checksothe">
+      <soap:operation soapAction="http://tempuri.org/Checksothe" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="checkLogin">
+      <soap:operation soapAction="http://tempuri.org/checkLogin" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteNhanVien">
+      <soap:operation soapAction="http://tempuri.org/deleteNhanVien" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertNhanvien">
+      <soap:operation soapAction="http://tempuri.org/InsertNhanvien" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateNhanVien">
+      <soap:operation soapAction="http://tempuri.org/UpdateNhanVien" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getData">
+      <soap:operation soapAction="http://tempuri.org/getData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="checkbarcode">
+      <soap:operation soapAction="http://tempuri.org/checkbarcode" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="checkprdbab">
+      <soap:operation soapAction="http://tempuri.org/checkprdbab" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="datetime">
+      <soap:operation soapAction="http://tempuri.org/datetime" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="insert">
+      <soap:operation soapAction="http://tempuri.org/insert" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mokhoabarcode">
+      <soap:operation soapAction="http://tempuri.org/mokhoabarcode" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="kieuloikhoa">
+      <soap:operation soapAction="http://tempuri.org/kieuloikhoa" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Get_shift">
+      <soap:operation soapAction="http://tempuri.org/Get_shift" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="checklido">
+      <soap:operation soapAction="http://tempuri.org/checklido" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="checkkhoahaychua">
+      <soap:operation soapAction="http://tempuri.org/checkkhoahaychua" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="severBarcodeSoap12" type="tns:severBarcodeSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Checksothe">
+      <soap12:operation soapAction="http://tempuri.org/Checksothe" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="checkLogin">
+      <soap12:operation soapAction="http://tempuri.org/checkLogin" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteNhanVien">
+      <soap12:operation soapAction="http://tempuri.org/deleteNhanVien" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertNhanvien">
+      <soap12:operation soapAction="http://tempuri.org/InsertNhanvien" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateNhanVien">
+      <soap12:operation soapAction="http://tempuri.org/UpdateNhanVien" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getData">
+      <soap12:operation soapAction="http://tempuri.org/getData" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="checkbarcode">
+      <soap12:operation soapAction="http://tempuri.org/checkbarcode" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="checkprdbab">
+      <soap12:operation soapAction="http://tempuri.org/checkprdbab" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="datetime">
+      <soap12:operation soapAction="http://tempuri.org/datetime" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="insert">
+      <soap12:operation soapAction="http://tempuri.org/insert" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mokhoabarcode">
+      <soap12:operation soapAction="http://tempuri.org/mokhoabarcode" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="kieuloikhoa">
+      <soap12:operation soapAction="http://tempuri.org/kieuloikhoa" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Get_shift">
+      <soap12:operation soapAction="http://tempuri.org/Get_shift" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="checklido">
+      <soap12:operation soapAction="http://tempuri.org/checklido" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="checkkhoahaychua">
+      <soap12:operation soapAction="http://tempuri.org/checkkhoahaychua" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="severBarcode">
+    <wsdl:port name="severBarcodeSoap" binding="tns:severBarcodeSoap">
+      <soap:address location="http://198.1.10.232:4567/severBarcode.asmx" />
+    </wsdl:port>
+    <wsdl:port name="severBarcodeSoap12" binding="tns:severBarcodeSoap12">
+      <soap12:address location="http://198.1.10.232:4567/severBarcode.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

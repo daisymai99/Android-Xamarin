@@ -1,0 +1,3 @@
+D:\ngoc\QlyNhanVienAndroid\QlyNhanVienAndroid\obj\Debug\90\MonoAndroid,Version=v9.0.AssemblyAttributes.cs
+D:\ngoc\QlyNhanVienAndroid\QlyNhanVienAndroid\obj\Debug\90\build.props
+D:\ngoc\QlyNhanVienAndroid\QlyNhanVienAndroid\obj\Debug\90\adb.props

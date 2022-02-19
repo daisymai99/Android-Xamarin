@@ -1,0 +1,378 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="HelloWorld">
+        <s:complexType />
+      </s:element>
+      <s:element name="HelloWorldResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="HelloWorldResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="checkLogin">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="empno" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="checkLoginResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="checkLoginResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="getEngName">
+        <s:complexType />
+      </s:element>
+      <s:element name="getEngNameResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getEngNameResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="deleteNhanVien">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ho" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="deleteNhanVienResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="deleteNhanVienResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="spinnerTextChange">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="spinner" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="spinnerTextChangeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="spinnerTextChangeResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertNhanvien">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ho" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ten" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertNhanvienResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="InsertNhanvienResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateNhanVien">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="hoCu" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="tenCu" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="hoMoi" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="tenMoi" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateNhanVienResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UpdateNhanVienResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getData">
+        <s:complexType />
+      </s:element>
+      <s:element name="getDataResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getDataResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="HelloWorldSoapIn">
+    <wsdl:part name="parameters" element="tns:HelloWorld" />
+  </wsdl:message>
+  <wsdl:message name="HelloWorldSoapOut">
+    <wsdl:part name="parameters" element="tns:HelloWorldResponse" />
+  </wsdl:message>
+  <wsdl:message name="checkLoginSoapIn">
+    <wsdl:part name="parameters" element="tns:checkLogin" />
+  </wsdl:message>
+  <wsdl:message name="checkLoginSoapOut">
+    <wsdl:part name="parameters" element="tns:checkLoginResponse" />
+  </wsdl:message>
+  <wsdl:message name="getEngNameSoapIn">
+    <wsdl:part name="parameters" element="tns:getEngName" />
+  </wsdl:message>
+  <wsdl:message name="getEngNameSoapOut">
+    <wsdl:part name="parameters" element="tns:getEngNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="deleteNhanVienSoapIn">
+    <wsdl:part name="parameters" element="tns:deleteNhanVien" />
+  </wsdl:message>
+  <wsdl:message name="deleteNhanVienSoapOut">
+    <wsdl:part name="parameters" element="tns:deleteNhanVienResponse" />
+  </wsdl:message>
+  <wsdl:message name="spinnerTextChangeSoapIn">
+    <wsdl:part name="parameters" element="tns:spinnerTextChange" />
+  </wsdl:message>
+  <wsdl:message name="spinnerTextChangeSoapOut">
+    <wsdl:part name="parameters" element="tns:spinnerTextChangeResponse" />
+  </wsdl:message>
+  <wsdl:message name="InsertNhanvienSoapIn">
+    <wsdl:part name="parameters" element="tns:InsertNhanvien" />
+  </wsdl:message>
+  <wsdl:message name="InsertNhanvienSoapOut">
+    <wsdl:part name="parameters" element="tns:InsertNhanvienResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateNhanVienSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateNhanVien" />
+  </wsdl:message>
+  <wsdl:message name="UpdateNhanVienSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateNhanVienResponse" />
+  </wsdl:message>
+  <wsdl:message name="getDataSoapIn">
+    <wsdl:part name="parameters" element="tns:getData" />
+  </wsdl:message>
+  <wsdl:message name="getDataSoapOut">
+    <wsdl:part name="parameters" element="tns:getDataResponse" />
+  </wsdl:message>
+  <wsdl:portType name="serviceSoap">
+    <wsdl:operation name="HelloWorld">
+      <wsdl:input message="tns:HelloWorldSoapIn" />
+      <wsdl:output message="tns:HelloWorldSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="checkLogin">
+      <wsdl:input message="tns:checkLoginSoapIn" />
+      <wsdl:output message="tns:checkLoginSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getEngName">
+      <wsdl:input message="tns:getEngNameSoapIn" />
+      <wsdl:output message="tns:getEngNameSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="deleteNhanVien">
+      <wsdl:input message="tns:deleteNhanVienSoapIn" />
+      <wsdl:output message="tns:deleteNhanVienSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="spinnerTextChange">
+      <wsdl:input message="tns:spinnerTextChangeSoapIn" />
+      <wsdl:output message="tns:spinnerTextChangeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertNhanvien">
+      <wsdl:input message="tns:InsertNhanvienSoapIn" />
+      <wsdl:output message="tns:InsertNhanvienSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateNhanVien">
+      <wsdl:input message="tns:UpdateNhanVienSoapIn" />
+      <wsdl:output message="tns:UpdateNhanVienSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getData">
+      <wsdl:input message="tns:getDataSoapIn" />
+      <wsdl:output message="tns:getDataSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="serviceSoap" type="tns:serviceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="HelloWorld">
+      <soap:operation soapAction="http://tempuri.org/HelloWorld" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="checkLogin">
+      <soap:operation soapAction="http://tempuri.org/checkLogin" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getEngName">
+      <soap:operation soapAction="http://tempuri.org/getEngName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteNhanVien">
+      <soap:operation soapAction="http://tempuri.org/deleteNhanVien" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="spinnerTextChange">
+      <soap:operation soapAction="http://tempuri.org/spinnerTextChange" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertNhanvien">
+      <soap:operation soapAction="http://tempuri.org/InsertNhanvien" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateNhanVien">
+      <soap:operation soapAction="http://tempuri.org/UpdateNhanVien" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getData">
+      <soap:operation soapAction="http://tempuri.org/getData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="serviceSoap12" type="tns:serviceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="HelloWorld">
+      <soap12:operation soapAction="http://tempuri.org/HelloWorld" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="checkLogin">
+      <soap12:operation soapAction="http://tempuri.org/checkLogin" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getEngName">
+      <soap12:operation soapAction="http://tempuri.org/getEngName" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteNhanVien">
+      <soap12:operation soapAction="http://tempuri.org/deleteNhanVien" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="spinnerTextChange">
+      <soap12:operation soapAction="http://tempuri.org/spinnerTextChange" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertNhanvien">
+      <soap12:operation soapAction="http://tempuri.org/InsertNhanvien" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateNhanVien">
+      <soap12:operation soapAction="http://tempuri.org/UpdateNhanVien" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getData">
+      <soap12:operation soapAction="http://tempuri.org/getData" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="service">
+    <wsdl:port name="serviceSoap" binding="tns:serviceSoap">
+      <soap:address location="http://198.1.10.232:1899/service.asmx" />
+    </wsdl:port>
+    <wsdl:port name="serviceSoap12" binding="tns:serviceSoap12">
+      <soap12:address location="http://198.1.10.232:1899/service.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

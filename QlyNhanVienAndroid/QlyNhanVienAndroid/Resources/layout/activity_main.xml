@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/nestedScrollView1" >
+    <LinearLayout 
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent">
+
+                                          
+
+    <TextView
+        android:text="Chọn thao tác cần làm"
+       android:textSize="30dp"
+        android:layout_margin="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:id="@+id/tvLabel" />
+ 
+                          <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <Button
+        android:id="@+id/btnInsert"
+        android:layout_margin="@dimen/abc_action_bar_content_inset_material"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Thêm nhân viên "/>
+
+                    <Button
+        android:id="@+id/btnUpdate"
+        android:layout_margin="@dimen/abc_action_bar_content_inset_material"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sửa Thông tin Nhân viên"/>
+                </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+         
+        <Button
+        android:id="@+id/btnDelete"
+        android:layout_margin="@dimen/abc_action_bar_content_inset_material"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@android:color/holo_red_light"
+        android:text="Delete"/>
+
+        
+             <Button
+        android:id="@+id/btnGetData"
+        android:layout_margin="@dimen/abc_action_bar_content_inset_material"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@android:color/holo_red_light"
+        android:text="Coi dữ liệu"/>
+        
+
+
+      
+    </LinearLayout>
+
+           
+     
+
+    
+
+   
+
+
+    
+
+
+
+</LinearLayout>
+</androidx.core.widget.NestedScrollView>
